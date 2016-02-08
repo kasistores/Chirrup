@@ -12,6 +12,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     var tweets: [Tweet]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,17 +36,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1
+        return 20
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! TableViewCell
         
-        
-        
-        cell.tweetLabel.text = tweets![indexPath.row].text
-        cell.usernameLabel.text = tweets![indexPath.row].user!.name
-        cell.dateLabel.text = tweets![indexPath.row].createdAtString
+         cell.tweetLabel.text = tweets?[indexPath.row].text
+        cell.usernameLabel.text = tweets?[indexPath.row].user?.name
+        cell.dateLabel.text = tweets?[indexPath.row].createdAtString
         
         return cell
     }
