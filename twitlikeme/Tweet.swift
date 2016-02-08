@@ -1,3 +1,4 @@
+
 //
 //  Tweet.swift
 //  twitlikeme
@@ -9,7 +10,7 @@
 import UIKit
 
 class Tweet: NSObject {
-
+    
     var user: User?
     var text: String?
     var createdAtString: String?
@@ -34,6 +35,6 @@ class Tweet: NSObject {
         
         return tweets
     }
-
+    
     
 }
