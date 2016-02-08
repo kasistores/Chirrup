@@ -41,27 +41,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! TableViewCell
         
-        //if let a = tweets?[indexPath.row]
-        //{
         
         
         cell.tweetLabel.text = tweets![indexPath.row].text
         cell.usernameLabel.text = tweets![indexPath.row].user!.name
         cell.dateLabel.text = tweets![indexPath.row].createdAtString
-        /*if let a = tweets?[indexPath.row].user?.profileImageUrl
-        {
-            print("profile pic url \(tweets?[indexPath.row].user?.profileImageUrl)")
-            //cell.profilePicLabel.setImageWithURL(tweets?[indexPath.row].user?.profileImageUrl)
-            //cell.profilePicLabel.setImageWithURL(myTweet?.user?.profileImageUrl as NSURL)
-            
-            
-            
-            let baseUrl = tweets?[indexPath.row].user?.profileImageUrl
-            let imageUrl = NSURL(string: (baseUrl)!)
-            cell.profilePicLabel.setImageWithURL((imageUrl)!)
-            
-            
-        }*/
         
         return cell
     }
