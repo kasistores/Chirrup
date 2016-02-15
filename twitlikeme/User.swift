@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 var _currentUser: User?
 let currentUserKey = "currentUserKey"

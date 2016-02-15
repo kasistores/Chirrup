@@ -15,9 +15,15 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     
+    @IBOutlet weak var retweetLabel: UILabel!
+    @IBOutlet weak var likeLabel: UILabel!
+    var retweeted: Bool?
+    var favorited: Bool?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.profileImageView.layer.cornerRadius = 10.0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
