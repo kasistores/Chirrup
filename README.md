@@ -63,7 +63,7 @@ I couldn't figure out how to implement how to do the profile image pictures and 
 
 # Project 5 - *Name of App Here*
 
-Time spent: **6** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
