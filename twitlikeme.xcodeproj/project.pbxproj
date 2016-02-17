@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A176BBB1C73FF32002E013B /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A176BBA1C73FF32002E013B /* ComposeViewController.swift */; };
 		0A278A5B1C61787C007479D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A278A5A1C61787C007479D3 /* AppDelegate.swift */; };
 		0A278A5D1C61787C007479D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A278A5C1C61787C007479D3 /* ViewController.swift */; };
 		0A278A601C61787C007479D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A278A5E1C61787C007479D3 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A176BBA1C73FF32002E013B /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		0A278A571C61787C007479D3 /* twitlikeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitlikeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A278A5A1C61787C007479D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A278A5C1C61787C007479D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				0A278A5C1C61787C007479D3 /* ViewController.swift */,
 				0A42999A1C714E67007E0B0F /* DetailViewController.swift */,
 				0A278A5E1C61787C007479D3 /* Main.storyboard */,
+				0A176BBA1C73FF32002E013B /* ComposeViewController.swift */,
 				0AD46FE91C72CE1900CD9484 /* ProfileViewController.swift */,
 				0A278A611C61787C007479D3 /* Assets.xcassets */,
 				0A278A631C61787C007479D3 /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 				0A90C32F1C682E9300494D99 /* TweetsViewController.swift in Sources */,
 				0A278A5D1C61787C007479D3 /* ViewController.swift in Sources */,
 				0AD81F311C617CE00091CD1B /* TwitterClient.swift in Sources */,
+				0A176BBB1C73FF32002E013B /* ComposeViewController.swift in Sources */,
 				0A90C3311C683C8800494D99 /* TableViewCell.swift in Sources */,
 				0AD46FEA1C72CE1900CD9484 /* ProfileViewController.swift in Sources */,
 				0A278A5B1C61787C007479D3 /* AppDelegate.swift in Sources */,

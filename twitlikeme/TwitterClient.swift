@@ -80,6 +80,18 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
         
     }
+    func test(message: String)
+    {
+        var newString = message.stringByReplacingOccurrencesOfString(" ", withString: "%20", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        newString = newString.stringByReplacingOccurrencesOfString("'", withString: "%27", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        newString = newString.stringByReplacingOccurrencesOfString("#", withString: "%23", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        newString = newString.stringByReplacingOccurrencesOfString("@", withString: "%40", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        POST("https://api.twitter.com/1.1/statuses/update.json?status=\(newString)", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                
+        }
+    }
     
     func homeTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
         GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in

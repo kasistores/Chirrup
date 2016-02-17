@@ -169,6 +169,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chirrup" id="jGL-46-o9d">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="lpE-bI-Weg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ajU-2O-QXi">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Compose"/>
+                                <connections>
+                                    <segue destination="R7D-Gx-bKB" kind="show" identifier="ComposeSegue" id="Iwq-hl-eHO"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="epE-Ew-0LR">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="On8-UQ-dbS">
                                 <rect key="frame" x="307" y="7" width="52" height="30"/>
@@ -188,6 +198,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndb-Tn-JpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1618.5" y="417.5"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="oGa-da-igY">
+            <objects>
+                <viewController id="R7D-Gx-bKB" customClass="ComposeViewController" customModule="twitlikeme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cC0-3X-avK"/>
+                        <viewControllerLayoutGuide type="bottom" id="8K1-Ql-XxH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ebM-hO-IVu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Be-jT-3Yf">
+                                <rect key="frame" x="11" y="91" width="344" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="inTap:" destination="R7D-Gx-bKB" eventType="editingDidEnd" id="gF8-N8-IlT"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GQ-Yk-CUT">
+                                <rect key="frame" x="166" y="156" width="43" height="30"/>
+                                <state key="normal" title="tweet!"/>
+                                <connections>
+                                    <action selector="onSend:" destination="R7D-Gx-bKB" eventType="touchUpInside" id="hHr-8f-GIK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="2GQ-Yk-CUT" firstAttribute="top" relation="lessThanOrEqual" secondItem="1Be-jT-3Yf" secondAttribute="bottom" constant="35" id="Bs3-iS-v1z"/>
+                            <constraint firstItem="8K1-Ql-XxH" firstAttribute="top" relation="lessThanOrEqual" secondItem="2GQ-Yk-CUT" secondAttribute="bottom" constant="481" id="DmN-RC-Bh5"/>
+                            <constraint firstItem="2GQ-Yk-CUT" firstAttribute="leading" secondItem="ebM-hO-IVu" secondAttribute="leading" constant="166" id="FlV-tU-w0Y"/>
+                            <constraint firstItem="1Be-jT-3Yf" firstAttribute="top" secondItem="cC0-3X-avK" secondAttribute="bottom" constant="27" id="GJd-jL-8uw"/>
+                            <constraint firstItem="1Be-jT-3Yf" firstAttribute="leading" secondItem="ebM-hO-IVu" secondAttribute="leading" constant="11" id="TKN-bG-yRD"/>
+                            <constraint firstAttribute="trailing" secondItem="2GQ-Yk-CUT" secondAttribute="trailing" constant="166" id="gOQ-JQ-mcc"/>
+                            <constraint firstAttribute="trailing" secondItem="1Be-jT-3Yf" secondAttribute="trailing" constant="20" id="pA9-Oj-iyF"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tweetField" destination="1Be-jT-3Yf" id="0ev-cx-OOq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0A-22-Rzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444.5" y="-297.5"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="YBB-4h-rXG">
