@@ -8,12 +8,13 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell{
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var retweetLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
@@ -24,6 +25,11 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.profileImageView.layer.cornerRadius = 10.0
+        
+        let UITapRecognizer = UITapGestureRecognizer(target: self, action: "tappedImage:")
+        UITapRecognizer.delegate = self
+        self.profileImageView.addGestureRecognizer(UITapRecognizer)
+        self.profileImageView.userInteractionEnabled = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

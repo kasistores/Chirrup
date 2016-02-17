@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var tweets: [Tweet]?
@@ -35,7 +35,16 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tweets = tweets
             self.tableView.reloadData()
         })
+        
+        let UITapRecognizer = UITapGestureRecognizer(target: self, action: "tappedImage:")
+        UITapRecognizer.delegate = self
     }
+    
+    func tappedImage(sender: AnyObject){
+        print("image tapped")
+    }
+    
+    
 
     
     
@@ -76,17 +85,17 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.favorited = tweetRetweeted
         if favCount! == 0 {
             cell.likeLabel.hidden = true
-            cell.likeLabel.text = "\(favCount!)"
-            //print(tweetFavoriteCount!)
+            cell.likeLabel.text = "0"
+            print(favCount!)
         } else {
             cell.likeLabel.hidden = false
             cell.likeLabel.text = "\(favCount!)"
-            //print(tweetFavoriteCount!)
+            print(favCount!)
         }
         
         if retweetCount! == 0 {
             cell.retweetLabel.hidden = true
-            cell.retweetLabel.text = "\(retweetCount!)"
+            cell.retweetLabel.text = "0"
         } else {
             cell.retweetLabel.hidden = false
             cell.retweetLabel.text = "\(retweetCount!)"
@@ -113,19 +122,38 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //var senderCell = sender!.superview!!.superview!
             
-            //print("congrats you just pressed a cell")
+            if segue.identifier == "IndividualTweetSegue"{
+        //print("congrats you just pressed a cell")
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let tweet = self.tweets![indexPath!.row]
             let detailsViewController = segue.destinationViewController as! DetailViewController
             
             detailsViewController.tweet = tweet
-            
-            // obj is not a string array
-        
+                
             let backgroundView = UIView()
             backgroundView.backgroundColor = UIColor.clearColor()
             cell.selectedBackgroundView = backgroundView
+            
+            // obj is not a string array
+            }
+        else if segue.identifier == "ProfileSegue"{
+                let cell = sender?.superview!!.superview as! UITableViewCell
+                let indexPath = tableView.indexPathForCell(cell)
+                let user = self.tweets![indexPath!.row].user!
+                
+                let profile = segue.destinationViewController as! ProfileViewController
+                profile.user = user
+            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.clearColor()
+            cell.selectedBackgroundView = backgroundView
+            
+            // obj is not a string array
+        }
+
+        
+        
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
