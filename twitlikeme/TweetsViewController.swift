@@ -25,6 +25,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -151,6 +152,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             // obj is not a string array
         }
+        else if segue.identifier == "ComposeSegue"{
+            tableView.reloadData()
+        }
+
 
         
         

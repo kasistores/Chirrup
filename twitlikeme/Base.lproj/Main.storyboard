@@ -215,9 +215,6 @@
                                 <rect key="frame" x="11" y="91" width="344" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="inTap:" destination="R7D-Gx-bKB" eventType="editingDidEnd" id="gF8-N8-IlT"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GQ-Yk-CUT">
                                 <rect key="frame" x="166" y="156" width="43" height="30"/>
